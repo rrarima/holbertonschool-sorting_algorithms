@@ -11,7 +11,6 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t x = 0;
 	size_t y;
-/*	size_t c = 0;*/
 	int temp;
 
 	while (x < size - 1)
@@ -24,15 +23,10 @@ void bubble_sort(int *array, size_t size)
 				temp = array[y];
 				array[y] = array[y + 1];
 				array[y + 1] = temp;
-			}
-			printf("%d", array[y]);
-			if (y < size - 1)
-			{
-				printf(", ");
+				print_array(array, size);
 			}
 			y = y + 1;
 		}
-		printf("\n");
 		x = x + 1;
 	}
 }
