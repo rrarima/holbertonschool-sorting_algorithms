@@ -10,17 +10,19 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *curr, *temp;
 
-        curr = *list;
+	curr = *list;
 
-        while (curr != NULL)
-        {
-		while (curr != NULL && (curr->prev == NULL || curr->prev->n <= curr->n))
+	while (curr != NULL)
+	{
+		while (curr != NULL && (curr->prev == NULL ||
+					curr->prev->n <= curr->n))
 		{
 
 				curr = curr->next;
 		}
 
-		if (curr != NULL && curr->prev != NULL && curr->prev->n > curr->n)
+		if (curr != NULL && curr->prev != NULL &&
+		    curr->prev->n > curr->n)
 		{
 
 			temp = curr->prev;
@@ -43,23 +45,4 @@ void insertion_sort_list(listint_t **list)
 			print_list(*list);
 		}
 	}
-
-
 }
-
-
-/*    int i, temp, j;
-
-    i = 1;
-    while (i < n)
-    {
-        temp = arr[i];
-        j = i - 1;
-	while (j >= 0 && arr[j] > temp)
-	{
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = temp;
-	i = i + 1;
-	}*/
