@@ -13,13 +13,13 @@ int partition(int *array, int start, int end, size_t size)
 
 	pivot = array[end];
 	partitionIndex = start;
-
 	i = start;
+
 	while (i < end)
 	{
 		if (array[i] <= pivot)
 		{
-			if (i != partitionIndex)
+		if (i != partitionIndex)
 			{
 				temp = array[i];
 				array[i] = array[partitionIndex];
@@ -40,11 +40,12 @@ int partition(int *array, int start, int end, size_t size)
 
 void quick_sort_i(int *array, int start, int end, size_t size)
 {
+	int partitionIndex;
+
 	if ((end - start) < 2)
 	{
 		return;
 	}
-	int partitionIndex;
 	partitionIndex = partition(array, start, end, size);
 	quick_sort_i(array, start, partitionIndex-1, size);
 	quick_sort_i(array, partitionIndex+1, end, size);
