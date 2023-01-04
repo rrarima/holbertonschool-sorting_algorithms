@@ -42,7 +42,7 @@ void quick_sort_i(int *array, int start, int end, size_t size)
 {
 	int partitionIndex;
 
-	if ((end - start) < 2)
+	if ((end - start) < 1)
 	{
 		return;
 	}
