@@ -19,12 +19,11 @@ int partition(int *array, int start, int end, size_t size)
 	{
 		if (array[i] <= pivot)
 		{
-		if (i != partitionIndex)
+			if (i != partitionIndex)
 			{
 				temp = array[i];
 				array[i] = array[partitionIndex];
 				array[partitionIndex] = temp;
-				print_array(array, size);
 			}
 			partitionIndex = partitionIndex + 1;
 		}
@@ -37,7 +36,6 @@ int partition(int *array, int start, int end, size_t size)
 	return (partitionIndex);
 }
 
-
 void quick_sort_i(int *array, int start, int end, size_t size)
 {
 	int partitionIndex;
@@ -47,11 +45,12 @@ void quick_sort_i(int *array, int start, int end, size_t size)
 		return;
 	}
 	partitionIndex = partition(array, start, end, size);
-	quick_sort_i(array, start, partitionIndex-1, size);
-	quick_sort_i(array, partitionIndex+1, end, size);
+	quick_sort_i(array, start, partitionIndex - 1, size);
+	quick_sort_i(array, partitionIndex + 1, end, size);
 }
 
 void quick_sort(int *array, size_t size)
 {
 	quick_sort_i(array, 0, size - 1, size);
+	print_array(array, size);
 }
